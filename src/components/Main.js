@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponents from "../subComponents/LogoComponents";
@@ -20,7 +20,6 @@ const MainContainer = styled.div`
   h5,
   h6 {
     font-family: "Karla", sans-serif;
-    font-wieght: 500;
   }
 `;
 
@@ -53,7 +52,7 @@ const BLOG = styled(NavLink)`
 `;
 
 const WORK = styled(NavLink)`
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.click ? props.theme.body : props.theme.text};
   position: absolute;
   top: 50%;
   left: 2.8rem;
@@ -63,6 +62,7 @@ const WORK = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
+  transition: color 1.9s ease;
 `;
 
 const BottoBar = styled.div`
@@ -76,7 +76,8 @@ const BottoBar = styled.div`
   justify-content: space-evenly;
 `;
 const ABOUT = styled(NavLink)`
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.click ? props.theme.body : props.theme.text};
+  transition: color 0.9s ease;
 
   z-index: 1;
   cursor: pointer;
@@ -106,8 +107,8 @@ to{
 
 const Center = styled.button`
   position: absolute;
-  top:  ${props => props.click ? '85%' : '50%'};
-  left: ${props => props.click ? '92%' : '50%'};
+  top: ${(props) => (props.click ? "85%" : "50%")};
+  left: ${(props) => (props.click ? "calc(-2.7rem + 95%)" : "50%")};
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -118,31 +119,52 @@ const Center = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 1.5s ease-in-out;
 
   & > :first-child {
     animation: ${rotates} infinite 1.5s linear;
   }
   & > :last-child {
     padding-top: 1rem;
+    opacity: ${(props) => (props.click ? "0" : "1")};
+    transition: all 1.5s ease-in-out;
   }
 `;
 
-const Main = () => {
+const DarkDiv = styled.div`
+  position: absolute;
+  top: 0;
+  background-color: #000 ;
+  bottom: 0;
+  right: 50%;
+  width: ${props => props.click ? "50%" : "0%"};
+  height: ${props => props.click ? "100%" : "0%"};
+  transition: height 0.5s ease, width 1s ease .5s;
 
+  z-index: 1;
+`;
+
+const Main = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
 
-
   return (
     <MainContainer>
+      <DarkDiv click={click} />
+
       <Container>
         <PowerButton />
-        <LogoComponents />
-        <SocialIcons />
+        <LogoComponents theme={click ? 'dark' : 'light'} />
+        <SocialIcons theme={click ? 'dark' : 'light'}/>
 
-        <Center click={click} >
-          <YinYang onClick={() => handleClick()} width={150} height={150} fill="currentColor" />
+        <Center click={click} onClick={() => handleClick()}>
+          <YinYang
+            width={click ? "120" : "200"}
+            height={click ? "120" : "200"}
+            fill="currentColor"
+            style={{ transition: "all 1.5s ease-in-out" }}
+          />
           <span>click here</span>
         </Center>
 
@@ -152,16 +174,16 @@ const Main = () => {
           href="mailto:saeid.kase.atashin@gmail.com"
           rel="noreferrer"
         >
-          Message Me...
+          Mail Me...
         </Contact>
         <BLOG to="/blog" rel="noreferrer">
           Blog
         </BLOG>
-        <WORK to="/work" rel="noreferrer">
+        <WORK click={click} to="/work" rel="noreferrer">
           Work
         </WORK>
         <BottoBar>
-          <ABOUT to="/about" rel="noreferrer">
+          <ABOUT click={click} to="/about" rel="noreferrer">
             About Me
           </ABOUT>
           <SKILLS to="/skills" rel="noreferrer">

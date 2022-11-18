@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Facebook, Github, Twitter, YouTube } from "../components/AllSvgs";
+import { DarkTheme } from "../components/Themes";
 
 const Icons = styled.div`
   display: flex;
@@ -21,10 +22,12 @@ const Icons = styled.div`
 const Line = styled.span`
   width: 2px;
   height: 8rem;
-  background-color: ${(props) => props.theme.text};
+  background-color: ${(props) =>
+    props.color === "dark" ? DarkTheme.text : DarkTheme.body};
+  transition: background-color 1.9s ease;
 `;
 
-const SocialIcons = () => {
+const SocialIcons = (props) => {
   return (
     <Icons>
       <div>
@@ -35,7 +38,11 @@ const SocialIcons = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Github width={30} height={30} fill="currentColor" />
+            <Github
+              width={30}
+              height={30}
+              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            />
           </a>
         </NavLink>
       </div>
@@ -47,7 +54,11 @@ const SocialIcons = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Twitter width={30} height={30} fill="currentColor" />
+            <Twitter
+              width={30}
+              height={30}
+              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            />
           </a>
         </NavLink>
       </div>
@@ -59,7 +70,11 @@ const SocialIcons = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Facebook width={30} height={30} fill="currentColor" />
+            <Facebook
+              width={30}
+              height={30}
+              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            />
           </a>
         </NavLink>
       </div>
@@ -71,11 +86,15 @@ const SocialIcons = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <YouTube width={30} height={30} fill="currentColor" />
+            <YouTube
+              width={30}
+              height={30}
+              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            />
           </a>
         </NavLink>
       </div>
-      <Line />
+      <Line color={props.theme} />
     </Icons>
   );
 };
