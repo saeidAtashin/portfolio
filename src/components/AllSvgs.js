@@ -133,7 +133,7 @@ export const PowerBtn = (props) => {
   
   
   
-  export const Link = (props) => {
+  export const Linker = (props) => {
     return (
       <svg
         aria-hidden="true"
