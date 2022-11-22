@@ -74,7 +74,7 @@ const MySkillsPage = () => {
       <PowerButton />
       <ParticleComponent />
       <Box>
-        {/* <Main>
+        <Main>
           <Title>
             <Design width={40} height={40} /> React & Libraries:
           </Title>
@@ -89,7 +89,7 @@ const MySkillsPage = () => {
             - Redux, React Router
             <br />- Environments Variables, React Dev Tools
           </Description>
-        </Main> */}
+        </Main>
         <Main>
           <Title>
             <Design width={40} height={40} /> JavaScript , HTML & CSS:
