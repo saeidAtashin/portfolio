@@ -9,7 +9,7 @@ const Logo = styled.h1`
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
-  z-index: 3;
+  z-index: 4;
 `;
 
 const LogoComponents = (props) => {

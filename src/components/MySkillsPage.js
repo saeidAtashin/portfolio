@@ -1,14 +1,14 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { lightTheme } from "./Themes";
-import { Design, Develope } from "./AllSvgs";
+import { lightTheme, DarkTheme } from "./Themes";
+import { Design } from "./AllSvgs";
 import LogoComponent from "../subComponents/LogoComponents";
 import SocilIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
 import ParticleComponent from "../subComponents/ParticleComponent";
 
 const Box = styled.div`
-  background-color: ${(props) => props.theme.body};
+  /* background-color: ${(props) => props.theme.text}; */
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -27,7 +27,6 @@ const Main = styled.div`
   line-height: 1.5;
 
   cursor: pointer;
-
 
   font-family: "Ubuntu Mono", monospace;
   display: flex;
@@ -60,20 +59,19 @@ const Description = styled.div`
   font-size: calc(0.6em + 0.5vw);
   padding: 0.5rem 0;
   ${Main}:hover & {
-   
-      color: ${(props) => props.theme.body};
-   
+    color: ${(props) => props.theme.body};
   }
 `;
 
 const MySkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <LogoComponent theme="light" />
-      <SocilIcons theme="light" />
-      <PowerButton />
-      <ParticleComponent />
       <Box>
+        <LogoComponent theme="light" />
+        <SocilIcons theme="light" />
+        <PowerButton />
+        <ParticleComponent theme="light" />
+        {/* <ParticleComponent theme="dark" /> */}
         <Main>
           <Title>
             <Design width={40} height={40} /> React & Libraries:
@@ -97,10 +95,9 @@ const MySkillsPage = () => {
           <Description>
             - ES6, Async Programming, OOP in JS - Pure JS SPA, Templating, DOM
             Manipulation
-            {/* <br /> */}
-            - HTML5, CSS3, RWD (Responsive Web Design), SVG, LESS, SASS
-            {/* <br /> */}
-            - Form Validation
+            {/* <br /> */}- HTML5, CSS3, RWD (Responsive Web Design), SVG, LESS,
+            SASS
+            {/* <br /> */}- Form Validation
           </Description>
           <strong style={{ fontSize: "1.1rem" }}>SIDE SKILLS</strong>
           <Description>
