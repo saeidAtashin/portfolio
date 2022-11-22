@@ -8,7 +8,7 @@ import { PowerBtn } from '../components/AllSvgs'
 const Power = styled.button`
 position: fixed;
 top: 2rem;
-left:50%;
+left:50vw;
 transform: translate(-50% ,0);
 padding: 0.3rem;
 background-color: #FCF6F4;
@@ -24,7 +24,8 @@ z-index:3;
 cursor: pointer;
 
 &:hover{
-    background-color: rgba(0,255,0, 0.4);
+position: fixed;
+    background-color: rgba(167,126,126, 0.7);
 }
 &>*:first-child {
   text-decoration: none;
@@ -35,8 +36,8 @@ cursor: pointer;
 const PowerButton = () => {
   return (
     <Power>
-      <NavLink to="/work" rel="noreferrer" />
-      <PowerBtn width={30} height={30} fill='currentColor' />
+      <NavLink to="/"><PowerBtn width={30} height={30} fill='currentColor' /></NavLink>
+      
     </Power>
   )
 }
