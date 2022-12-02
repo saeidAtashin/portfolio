@@ -6,6 +6,7 @@ import SocilIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import astronaut from "../assets/Images/spaceman.png";
+import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -82,6 +83,8 @@ const AboutPage = () => {
           in it. You can connect with me via social links.
         </Main>
       </Box>
+      <BigTitle text="ABOUT" top= "10%" left="5%"/>
+
     </ThemeProvider>
   );
 };

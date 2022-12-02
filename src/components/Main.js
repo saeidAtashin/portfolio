@@ -177,28 +177,73 @@ const Main = () => {
           href="mailto:saeid.kase.atashin@gmail.com"
           rel="noreferrer"
         >
-          <motion.h2 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+          initial={{
+            y:-200,
+            transition: {type:'spring', duration: 1.5, delay:1}
+          }}
+          animate={{
+            y:0,
+            transition: {type:'spring', duration: 1.5, delay:1}
+          }}
+          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             Mail Me...
           </motion.h2>
         </Contact>
         <BLOG to="/blog" rel="noreferrer">
-          <motion.h2 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2 
+                    initial={{
+                      y:-200,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+                    animate={{
+                      y:0,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             Blog
           </motion.h2>
         </BLOG>
         <WORK click={click} to="/work" rel="noreferrer">
-          <motion.h2 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+                    initial={{
+                      y:-200,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+                    animate={{
+                      y:0,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             Work
           </motion.h2>
         </WORK>
         <BottoBar>
           <ABOUT click={click} to="/about" rel="noreferrer">
-          <motion.h2 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2 
+                    initial={{
+                      y:200,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+                    animate={{
+                      y:0,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             About Me
           </motion.h2>
           </ABOUT>
           <SKILLS to="/skills" rel="noreferrer">
-          <motion.h2 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+                    initial={{
+                      y:200,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+                    animate={{
+                      y:0,
+                      transition: {type:'spring', duration: 1.5, delay:1}
+                    }}
+          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             My Skills
           </motion.h2>
           </SKILLS>

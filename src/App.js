@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import './App.css';
 import { lightTheme } from './components/Themes';
@@ -10,21 +10,26 @@ import GlobalStyle from './data/GlobalStyle';
 import Main from './components/Main'
 import AboutPage from './components/AboutPage'
 import BlogPage from './components/BlogPage'
-import Work from './components/Work'
+import Work from './components/WorkPage'
 import MySkillsPage from './components/MySkillsPage'
+import { AnimatePresence } from 'framer-motion';
+import SoundBar from './subComponents/SoundBar';
 
 
 
 
 function App() {
+  const location = useLocation();
   return (
    
 <>
 <GlobalStyle />
 
 <ThemeProvider theme={lightTheme}>
+  <SoundBar/>
+<AnimatePresence exitBeforeEnter>
 
-<Routes>
+<Routes location={location} key={location.pathname}>
 
 <Route exact path='/' element={<Main />} />
 <Route exact path='/about' element={<AboutPage />} />
@@ -34,6 +39,7 @@ function App() {
 
 
 </Routes>
+</AnimatePresence>
 
 </ThemeProvider>
 

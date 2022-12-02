@@ -1,11 +1,12 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, DarkTheme } from "./Themes";
+import { lightTheme } from "./Themes";
 import { Design } from "./AllSvgs";
 import LogoComponent from "../subComponents/LogoComponents";
 import SocilIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
 import ParticleComponent from "../subComponents/ParticleComponent";
+import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
   /* background-color: ${(props) => props.theme.text}; */
@@ -71,8 +72,9 @@ const MySkillsPage = () => {
         <SocilIcons theme="light" />
         <PowerButton />
         <ParticleComponent theme="light" />
-        {/* <ParticleComponent theme="dark" /> */}
+      <BigTitle text="MY SKILLS" top= "80%" right="30%"/>
         <Main>
+          
           <Title>
             <Design width={40} height={40} /> React & Libraries:
           </Title>
