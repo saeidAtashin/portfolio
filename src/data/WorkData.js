@@ -13,7 +13,7 @@ export const Work = [
         id:2,
         name:"Simplified Netfix",
         description:"A Movie listing website build in ReactJS. With react-redux axios. If you are in Iran please use VPN for fetch API correctly",
-        tags:["react","react-redux", "react-router-dom","API"],
+        tags:["react","redux", "react-router-dom"],
         demo:"https://netflix-used-api.vercel.app/",
         github:"https://github.com/saeidAtashin/netflix",
         img:"https://res.cloudinary.com/practicaldev/image/fetch/s--K8sVFuCD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hjukkwcishwdbbo3vp5m.jpeg"
