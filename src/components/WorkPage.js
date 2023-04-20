@@ -83,7 +83,16 @@ const WorkPage = () => {
         <PowerButton />
         <Main ref={ref} variants={container} initial='hidden' animate='show'>
           {Work.map((d) => (
-            <Card key={d.id} data={d} />
+            <Card key={d.id} data={d} image2={d.img} >
+            <img src={d.img} alt={d.name}/>
+              <p>{d.name}</p>
+              <p>{d.name}</p>
+              <p>{d.name}</p>
+              <p>{d.name}</p>
+              <p>{d.name}</p>
+
+            </Card>
+            
           ))}
         </Main>
         <Rotate>

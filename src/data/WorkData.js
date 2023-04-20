@@ -1,21 +1,22 @@
 export const Work = [
     {
         id:1,
-        name:"Agency Landing Page",
-        description:"It is build on top of the React JS, with styledComponents and GSAP for smooth scrolling animations.",
-        tags:["react","gsap","styledComponents"],
+        name:"Candy Crush Desktop",
+        description:"It is Simplified Candy Crush Game for desktop in React JS, with html, css , javascrit. It work for 3, 4 and 5 element in row and column of same color",
+        tags:["react","css","axios", "dotenv"],
         
-        demo:"https://agency-website-eta.vercel.app/",
-        github:"https://github.com/codebucks27/Agency-website"
+        demo:"https://candy-crush-delta.vercel.app/",
+        github:"https://github.com/saeidAtashin/candyCrush",
+        img:"https://downloadr2.apkmirror.com/wp-content/uploads/2022/10/87/6358e536e4385-384x384.png"
     },
     {
         id:2,
-        name:"Job listing website",
-        description:"A Job listing website build in ReactJS. With searching and filtering functionalities.",
-        tags:["react","sass"],
-        
-        demo:"http://react-job-listing-website.codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/react-job-listing-website"
+        name:"Simplified Netfix",
+        description:"A Movie listing website build in ReactJS. With react-redux axios. If you are in Iran please use VPN for fetch API correctly",
+        tags:["react","react-redux", "react-router-dom","API"],
+        demo:"https://netflix-used-api.vercel.app/",
+        github:"https://github.com/saeidAtashin/netflix",
+        img:"https://res.cloudinary.com/practicaldev/image/fetch/s--K8sVFuCD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hjukkwcishwdbbo3vp5m.jpeg"
         
     },
     {
