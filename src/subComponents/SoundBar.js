@@ -11,7 +11,7 @@ const Box = styled.div`
   top: 3rem;
   z-index: 10;
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     left: 6.5rem;
     top: 3rem;
   }
