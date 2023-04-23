@@ -18,7 +18,6 @@ const Icons = styled.div`
   & > *:not(:last-child) {
     margin: 0.2rem 0;
   }
-
 `;
 
 const Line = styled(motion.span)`
@@ -29,90 +28,87 @@ const Line = styled(motion.span)`
   transition: background-color 1.9s ease;
   /* transition: height 1.9s ease; */
 
-/* 
-  @media (max-width: 500px) {
+  /* 
+  @media (max-width: 800px) {
 
   height: 60px !important;
 } */
-
 `;
 
 const SocialIcons = (props) => {
   return (
     <Icons>
       <motion.div
-
-initial={{scale:0}}
-animate={{  scale:1}}
-transition={{  type:'spring', duration:1, delay:1}}
-
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", duration: 1, delay: 1 }}
       >
         <a target="_blank" href="https://github.com/saeidAtashin">
-
-            <Github
-              width={30}
-              height={30}
-              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-            />
+          <Github
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+          />
         </a>
       </motion.div>
       <motion.div
-     initial={{scale:0}}
-     animate={{  scale:1}}
-     transition={{  type:'spring', duration:1, delay:1.2}}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", duration: 1, delay: 1.2 }}
       >
         <a target="_blank" href="https://www.instagram.com/saeidaatashin">
-
-            <Instagram
-              width={30}
-              height={30}
-              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-            />
+          <Instagram
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+          />
         </a>
       </motion.div>
       <motion.div
-      initial={{scale:0}}
-      animate={{  scale:1}}
-      transition={{  type:'spring', duration:1, delay:1.4}}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", duration: 1, delay: 1.4 }}
       >
-        <a target="_blank" href="https://www.linkedin.com/in/saeid-kase-atashin-84ba52197/">
-
-
-            <Linkedin
-              width={30}
-              height={30}
-              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-            />
-
-
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/saeid-kase-atashin-84ba52197/"
+        >
+          <Linkedin
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+          />
         </a>
       </motion.div>
       <motion.div
-      initial={{scale:0}}
-      animate={{  scale:1}}
-      transition={{  type:'spring', duration:1, delay:1.6}}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", duration: 1, delay: 1.6 }}
       >
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=9368165125">
-
-            <Whatsapp
-              width={30}
-              height={30}
-              fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-            />
+        <a
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=9368165125"
+        >
+          <Whatsapp
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+          />
         </a>
       </motion.div>
-      <Line color={props.theme}
-      initial={
-        {
-          height:0
-        }
-      }
-      animate={{
-        height:'5rem'
-      }}
-      transition={{
-        type:'spring', duration:1.9, delay:0.8
-      }}
+      <Line
+        color={props.theme}
+        initial={{
+          height: 0,
+        }}
+        animate={{
+          height: "5rem",
+        }}
+        transition={{
+          type: "spring",
+          duration: 1.9,
+          delay: 0.8,
+        }}
       />
     </Icons>
   );

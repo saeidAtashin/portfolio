@@ -23,8 +23,6 @@ const MainContainer = styled.div`
   h6 {
     font-family: "Karla", sans-serif;
   }
-
-
 `;
 
 const Container = styled.div`
@@ -41,10 +39,9 @@ const Contact = styled.a`
   font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     font-size: 16px;
     top: 2.3rem;
-
   }
 `;
 
@@ -85,11 +82,10 @@ const BottoBar = styled.div`
   display: flex;
   justify-content: space-evenly;
 
-  @media (max-width: 500px) {
-
-  bottom: 4rem;
+  @media (max-width: 800px) {
+    bottom: 4rem;
     width: 100%;
-}
+  }
 `;
 const ABOUT = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
@@ -100,12 +96,10 @@ const ABOUT = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
-  
-  @media (max-width: 500px) {
 
+  @media (max-width: 800px) {
     font-size: 14px;
-
-}
+  }
 `;
 
 const SKILLS = styled(NavLink)`
@@ -116,11 +110,9 @@ const SKILLS = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
-  @media (max-width: 500px) {
-
-font-size: 14px;
-
-}
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
 `;
 
 const rotates = keyframes`
@@ -203,74 +195,84 @@ const Main = () => {
           rel="noreferrer"
         >
           <motion.h2
-          initial={{
-            y:-200,
-            transition: {type:'spring', duration: 1.5, delay:1}
-          }}
-          animate={{
-            y:0,
-            transition: {type:'spring', duration: 1.5, delay:1}
-          }}
-          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Mail Me...
           </motion.h2>
         </Contact>
         <BLOG to="/blog" rel="noreferrer">
-          <motion.h2 
-                    initial={{
-                      y:-200,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-                    animate={{
-                      y:0,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Blog
           </motion.h2>
         </BLOG>
         <WORK click={click} to="/work" rel="noreferrer">
           <motion.h2
-                    initial={{
-                      y:-200,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-                    animate={{
-                      y:0,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Work
           </motion.h2>
         </WORK>
         <BottoBar>
           <ABOUT click={click} to="/about" rel="noreferrer">
-          <motion.h2 
-                    initial={{
-                      y:200,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-                    animate={{
-                      y:0,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-            About Me
-          </motion.h2>
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              About Me
+            </motion.h2>
           </ABOUT>
           <SKILLS to="/skills" rel="noreferrer">
-          <motion.h2
-                    initial={{
-                      y:200,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-                    animate={{
-                      y:0,
-                      transition: {type:'spring', duration: 1.5, delay:1}
-                    }}
-          whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-            My Skills
-          </motion.h2>
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              My Skills
+            </motion.h2>
           </SKILLS>
         </BottoBar>
       </Container>
