@@ -39,7 +39,7 @@ export const Blogs = [
     tags: ["react", "redux", "framer-motion", "react-tsparticles"],
     date: "26 May, 2021",
     imgSrc: "/Images/yang.gif",
-    link: "https://portfolio-a4pm.vercel.app/",
+    link: "https://portfolio-atashin.vercel.app/",
   },
   {
     id: 6,
@@ -74,7 +74,7 @@ export const Blogs = [
     tags: ["react", "redux", "framer-motion", "react-tsparticles"],
     date: "26 May, 2021",
     imgSrc: "/Images/yang.gif",
-    link: "https://dev.to/codebucks/build-redux-react-todo-list-app-with-animations-using-framer-motion-1mp1",
+    link: "https://portfolio-atashin.vercel.app/",
   },
   {
     id: 7,
