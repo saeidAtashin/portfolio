@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 import LogoComponent from "../subComponents/LogoComponents";
 import SocilIcons from "../subComponents/SocialIcons";
@@ -14,7 +14,7 @@ import { YinYang } from "./AllSvgs";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
-  height: 400vh;
+  height: 200vh;
   position: relative;
   overflow: hidden;
 `;
@@ -37,42 +37,28 @@ const Rotate = styled.span`
 `;
 
 const container = {
-  hidden: {opacity:0},
+  hidden: { opacity: 0 },
   show: {
-    opacity:1,
+    opacity: 1,
 
-    transition:{
-      staggerChildren:0.5,
+    transition: {
+      staggerChildren: 0.5,
       duration: 0.5,
-    }
-  }
-}
-
+    },
+  },
+};
 
 const WorkPage = () => {
-  //
-  // ///////////////////
-  // before  2:58:38
-  // ///////////////////
-  //
   const ref = useRef(null);
   const yingyang = useRef(null);
 
   useEffect(() => {
-
-    let element = ref.current;
-
     const rotate = () => {
-      element.style.transform = `translateX(${-window.pageYOffset}px)`
-
-      yingyang.current.style.transform = `rotate(` + -window.pageYOffset + `deg)`
-
       yingyang.current.style.transform = `translateY(${-window.pageYOffset}%)`;
+      yingyang.current.style.transform = `rotate(${-window.pageYOffset}deg)`;
+    };
 
-    }
-
-    return () => window.removeEventListener('scroll', rotate)
-
+    return () => window.addEventListener("scroll", rotate);
   }, []);
 
   return (
@@ -81,26 +67,22 @@ const WorkPage = () => {
         <LogoComponent theme="dark" />
         <SocilIcons theme="dark" />
         <PowerButton />
-        <Main ref={ref} variants={container} initial='hidden' animate='show'>
+        <Main ref={ref}>
           {Work.map((d) => (
-            <Card key={d.id} data={d} image2={d.img} >
-            <img src={d.img} alt={d.name}/>
-              <p>{d.name}</p>
-              <p>{d.name}</p>
-              <p>{d.name}</p>
-              <p>{d.name}</p>
-              <p>{d.name}</p>
-
-            </Card>
-            
+            <Card key={d.id} data={d} image2={d.img}></Card>
           ))}
         </Main>
-        <Rotate>
+        <Rotate
+          ref={yingyang}
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
           <YinYang width={80} height={80} fill={DarkTheme.text} />
         </Rotate>
       </Box>
-      <BigTitle text="WORK" top="50%" left="15%"/>
-      <BigTitle text="WORK" top="30%" right="10%"/>
+      <BigTitle text="WORK" top="70%" left="15%" />
+      <BigTitle text="WORK" top="30%" right="10%" />
     </ThemeProvider>
   );
 };

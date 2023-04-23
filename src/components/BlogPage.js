@@ -44,38 +44,41 @@ const Grid = styled.div`
 `;
 
 const container = {
-  hidden: {opacity:0},
+  hidden: { opacity: 0 },
   show: {
-    opacity:1,
+    opacity: 1,
 
-    transition:{
-      staggerChildren:0.5,
+    transition: {
+      staggerChildren: 0.5,
       duration: 0.5,
-    }
-  }
-}
+    },
+  },
+};
+
 const BlogPage = () => {
   const [numbers, setNumbers] = useState(0);
 
   useEffect(() => {
-   let num = (window.innerHeight - 70)/30;
-   setNumbers(parseInt(num))
-    
+    let num = (window.innerHeight - 70) / 30;
+    setNumbers(parseInt(num));
   }, []);
   return (
     <MainContainer
-    variants={container}
-    initial='hidden'
-    animate='show'
-    exit={{
-      opacity:0, transition:{duration:0.5}
-    }}
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit={{
+        opacity: 0,
+        transition: { duration: 0.5 },
+      }}
     >
       <Constainer>
         <LogoComponents />
         <PowerButton />
         <SocialIcons />
-        <AnchorComponent numbers={numbers}/>
+
+
+        <AnchorComponent numbers={numbers} />
         <Center>
           <Grid>
             {Blogs.map((blog) => {
@@ -83,8 +86,7 @@ const BlogPage = () => {
             })}
           </Grid>
         </Center>
-      <BigTitle text="BLOG" top= "4rem" left="4rem"/>
-
+        <BigTitle text="BLOG" top="4rem" left="4rem" />
       </Constainer>
     </MainContainer>
   );

@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const Box = styled(motion(NavLink))`
+const Box = styled(motion.a)`
   width: calc(10rem + 15vw);
   text-decoration: none;
   height: 23rem;
@@ -84,13 +84,24 @@ const Item = {
 };
 
 const BlogComponent = (props) => {
-  const { name, tags, date, imgSrc, link } = props.blog;
+  const { name, tags, date, imgSrc, link, id } = props.blog;
   return (
     <Container variants={Item}>
-      <Box target="_blank" to={{ pathname: link }}>
-        <Image img={imgSrc} />
+      <Box target="_blank" href={link}>
+        {name === "This is my PORTFOLIO. A animated site using styled component and framer-motion" ? (
+          <lottie-player
+            src="https://assets10.lottiefiles.com/packages/lf20_xv6jIJkWzo.json"
+            background="transparent"
+            speed="1"
+ 
+            hover
+            loop
+            autoplay
+          ></lottie-player>
+        ) : (
+          <Image img={imgSrc} />
+        )}
         <Title>{name}</Title>
-        {/* <hr/> */}
         <Hashtags>
           {tags.map((t, id) => {
             return <Tag key={id}>#{t}</Tag>;
