@@ -7,7 +7,7 @@ export const Work = [
         
         demo:"https://candy-crush-delta.vercel.app/",
         github:"https://github.com/saeidAtashin/candyCrush",
-        img:"https://downloadr2.apkmirror.com/wp-content/uploads/2022/10/87/6358e536e4385-384x384.png"
+        img:"https://m.media-amazon.com/images/M/MV5BZWRiMjNlMjctOWZlMC00NTA0LWJlZTEtM2IxZDg0NTcyNWYxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_FMjpg_UX1000_.jpg"
     },
     {
         id:2,

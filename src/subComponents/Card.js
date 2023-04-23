@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import IMG1 from "../assets/Images/first.jpg";
 import { Github } from "../components/AllSvgs";
 
 const Box = styled(motion.li)`

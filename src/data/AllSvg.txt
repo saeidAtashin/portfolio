@@ -36,13 +36,13 @@ export const Github = (props) => {
       )
 }
 
-export const Twitter = (props) => {
+export const Instagram = (props) => {
     return (
         <svg
           aria-hidden="true"
           data-prefix="fab"
-          data-icon="twitter"
-          className="prefix__svg-inline--fa prefix__fa-twitter prefix__fa-w-16"
+          data-icon="Instagram"
+          className="prefix__svg-inline--fa prefix__fa-Instagram prefix__fa-w-16"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
           {...props}
@@ -55,13 +55,13 @@ export const Twitter = (props) => {
       )
 }
 
-export const Facebook = (props) => {
+export const Linkedin = (props) => {
     return (
         <svg
           aria-hidden="true"
           data-prefix="fab"
-          data-icon="facebook"
-          className="prefix__svg-inline--fa prefix__fa-facebook prefix__fa-w-16"
+          data-icon="Linkedin"
+          className="prefix__svg-inline--fa prefix__fa-linkedin prefix__fa-w-16"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
           {...props}
@@ -74,13 +74,13 @@ export const Facebook = (props) => {
       )
 }
 
-export const YouTube = (props) => {
+export const Whatsapp = (props) => {
     return (
         <svg
           aria-hidden="true"
           data-prefix="fab"
-          data-icon="youtube"
-          className="prefix__svg-inline--fa prefix__fa-youtube prefix__fa-w-18"
+          data-icon="Whatsapp"
+          className="prefix__svg-inline--fa prefix__fa-whatsapp prefix__fa-w-18"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 576 512"
           {...props}

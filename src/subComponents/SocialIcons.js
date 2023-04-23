@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Facebook, Github, Twitter, YouTube } from "../components/AllSvgs";
+import { Linkedin, Github, Instagram, Whatsapp } from "../components/AllSvgs";
 import { DarkTheme } from "../components/Themes";
 
 const Icons = styled.div`
@@ -38,80 +38,59 @@ animate={{  scale:1}}
 transition={{  type:'spring', duration:1, delay:1}}
 
       >
-        <NavLink target="_blank">
-          <a
-            style={{ color: "black" }}
-            href="https://github.com/saeidAtashin"
-            target="_blank"
-            rel="noreferrer"
-          >
+        <a target="_blank" href="https://github.com/saeidAtashin">
+
             <Github
               width={30}
               height={30}
               fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
             />
-          </a>
-        </NavLink>
+        </a>
       </motion.div>
       <motion.div
      initial={{scale:0}}
      animate={{  scale:1}}
      transition={{  type:'spring', duration:1, delay:1.2}}
       >
-        <NavLink target="_blank">
-          <a
-            style={{ color: "black" }}
-            href="https://github.com/saeidAtashin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Twitter
+        <a target="_blank" href="https://www.instagram.com/saeidaatashin">
+
+            <Instagram
               width={30}
               height={30}
               fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
             />
-          </a>
-        </NavLink>
+        </a>
       </motion.div>
       <motion.div
       initial={{scale:0}}
       animate={{  scale:1}}
       transition={{  type:'spring', duration:1, delay:1.4}}
       >
-        <NavLink target="_blank">
-          <a
-            style={{ color: "black" }}
-            href="https://github.com/saeidAtashin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Facebook
+        <a target="_blank" href="https://www.linkedin.com/in/saeid-kase-atashin-84ba52197/">
+
+
+            <Linkedin
               width={30}
               height={30}
               fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
             />
-          </a>
-        </NavLink>
+
+
+        </a>
       </motion.div>
       <motion.div
       initial={{scale:0}}
       animate={{  scale:1}}
       transition={{  type:'spring', duration:1, delay:1.6}}
       >
-        <NavLink target="_blank">
-          <a
-            style={{ color: "black" }}
-            href="https://github.com/saeidAtashin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <YouTube
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=9368165125">
+
+            <Whatsapp
               width={30}
               height={30}
               fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
             />
-          </a>
-        </NavLink>
+        </a>
       </motion.div>
       <Line color={props.theme}
       initial={
