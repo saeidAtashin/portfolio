@@ -32,6 +32,10 @@ const Box = styled(motion.div)`
   border-right: 2px solid ${(props) => props.theme.text};
 
   z-index: 1;
+
+  @media (max-width: 500px) {
+    /* background-color: red; */
+  }
 `;
 
 const SubBox = styled.div`
@@ -47,6 +51,26 @@ const SubBox = styled.div`
     width: 80%;
     height: auto;
   }
+  @media (max-width: 500px) {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    .pic {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(-60%, 0%);
+      width: 100%;
+      height: auto;
+    }
+    /* flex-direction: column; */
+    /* background-color: red; */
+    /* display: flex; */
+  }
 `;
 const Text = styled.div`
   font-size: calc(1em + 1.5vw);
@@ -57,6 +81,31 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  h6 {
+    font-size: large;
+    font-weight: 600 !important;
+
+    h6 {
+      color: black !important;
+      text-align: center;
+      font-size: larger;
+      font-weight: 800 !important;
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    h6 {
+      /* background-color: red; */
+      color: black !important;
+      /* text-align: center;
+      font-size: large;
+      font-weight: 600 !important; */
+
+
+    }
+  }
 
   & > *:last-child {
     color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
@@ -85,6 +134,10 @@ const Intro = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
+          <Text>
+            <h6>I code react js websites beautiful</h6>
+          </Text>
+
           <img className="pic" src={Me} alt="Profile Pic" />
         </motion.div>
       </SubBox>

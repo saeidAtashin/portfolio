@@ -23,6 +23,8 @@ const MainContainer = styled.div`
   h6 {
     font-family: "Karla", sans-serif;
   }
+
+
 `;
 
 const Container = styled.div`
@@ -38,6 +40,12 @@ const Contact = styled.a`
   font-size: 22px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
+
+  @media (max-width: 500px) {
+    font-size: 16px;
+    top: 2.3rem;
+
+  }
 `;
 
 const BLOG = styled(NavLink)`
@@ -76,6 +84,12 @@ const BottoBar = styled.div`
 
   display: flex;
   justify-content: space-evenly;
+
+  @media (max-width: 500px) {
+
+  bottom: 4rem;
+    width: 100%;
+}
 `;
 const ABOUT = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
@@ -86,6 +100,12 @@ const ABOUT = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
+  
+  @media (max-width: 500px) {
+
+    font-size: 14px;
+
+}
 `;
 
 const SKILLS = styled(NavLink)`
@@ -96,6 +116,11 @@ const SKILLS = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
+  @media (max-width: 500px) {
+
+font-size: 14px;
+
+}
 `;
 
 const rotates = keyframes`

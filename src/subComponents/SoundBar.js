@@ -8,6 +8,7 @@ const Box = styled.div`
 display: flex;
 cursor: pointer;
 position: fixed;
+
 left: 8rem;
 top: 3rem;
 z-index: 10;
@@ -52,6 +53,11 @@ animation-play-state: ${props => props.click ? 'running' : 'paused'} ;
 height: 1rem;
 width: 2px;
 margin: 0 0.1rem;
+
+@media (max-width: 500px) {
+    height: 0.6rem;
+    margin: 0 0.05rem;
+  }
 `
 
 const SoundBar = () => {

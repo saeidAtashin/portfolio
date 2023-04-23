@@ -18,6 +18,7 @@ const Icons = styled.div`
   & > *:not(:last-child) {
     margin: 0.2rem 0;
   }
+
 `;
 
 const Line = styled(motion.span)`
@@ -26,6 +27,14 @@ const Line = styled(motion.span)`
   background-color: ${(props) =>
     props.color === "dark" ? DarkTheme.text : DarkTheme.body};
   transition: background-color 1.9s ease;
+  /* transition: height 1.9s ease; */
+
+/* 
+  @media (max-width: 500px) {
+
+  height: 60px !important;
+} */
+
 `;
 
 const SocialIcons = (props) => {
@@ -99,10 +108,10 @@ transition={{  type:'spring', duration:1, delay:1}}
         }
       }
       animate={{
-        height:'8rem'
+        height:'5rem'
       }}
       transition={{
-        type:'spring', duration:1, delay:0.8
+        type:'spring', duration:1.9, delay:0.8
       }}
       />
     </Icons>
