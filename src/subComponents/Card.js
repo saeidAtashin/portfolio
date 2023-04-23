@@ -25,6 +25,10 @@ const Box = styled(motion.li)`
   isolation: isolate;
   position: relative;
 
+  @media (max-width: 500px) {
+    width: 11rem;
+
+  }
 
   &::after {
     content: "";
@@ -117,12 +121,11 @@ const Item = {
   },
 };
 const Img = styled.img`
-
-position: absolute;
-width: 100%;
-height: 100%;
-/* background-size: cover; */
-object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-size: cover; */
+  object-fit: cover;
 
   z-index: -1;
   inset: 0;
@@ -154,8 +157,7 @@ const Card = (props) => {
         })}
       </Tags>
       <Footer>
-        <Link2 href={demo}
-         target="_blank">
+        <Link2 href={demo} target="_blank">
           Visit
         </Link2>
         <Git href={github} target="_blank">

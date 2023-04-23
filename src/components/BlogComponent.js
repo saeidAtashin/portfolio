@@ -49,6 +49,10 @@ const Title = styled.h3`
   ${Box}:hover & {
     border-bottom: 1px solid ${(props) => props.theme.body};
   }
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
 `;
 
 const Hashtags = styled.div`
@@ -57,6 +61,10 @@ const Hashtags = styled.div`
   position: absolute;
   left: 1rem;
   bottom: 7%;
+
+  @media (max-width: 800px) {
+    font-size: 12px;
+  }
 `;
 const Tag = styled.span`
   padding-right: 0.5rem;
@@ -67,6 +75,10 @@ const Date = styled.span`
   position: absolute;
   left: 1rem;
   bottom: 0;
+
+  @media (max-width: 800px) {
+    font-size: 10px;
+  }
 `;
 
 const Container = styled(motion.div)``;
@@ -88,12 +100,13 @@ const BlogComponent = (props) => {
   return (
     <Container variants={Item}>
       <Box target="_blank" href={link}>
-        {name === "This is my PORTFOLIO. A animated site using styled component and framer-motion" ? (
+        {name ===
+        "This is my PORTFOLIO. A animated site using styled component and framer-motion" ? (
           <lottie-player
             src="https://assets10.lottiefiles.com/packages/lf20_xv6jIJkWzo.json"
             background="transparent"
             speed="1"
- 
+            style={{ marginBottom: "100px" }}
             hover
             loop
             autoplay

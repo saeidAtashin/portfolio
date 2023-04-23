@@ -39,7 +39,7 @@ const Contact = styled.a`
   font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
 
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     font-size: 16px;
     top: 2.3rem;
   }
@@ -82,7 +82,7 @@ const BottoBar = styled.div`
   display: flex;
   justify-content: space-evenly;
 
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     bottom: 4rem;
     width: 100%;
   }
@@ -97,7 +97,7 @@ const ABOUT = styled(NavLink)`
   font-size: 18px;
   font-weight: bold;
 
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     font-size: 10px;
   }
 `;
@@ -110,7 +110,7 @@ const SKILLS = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     font-size: 10px;
   }
 `;

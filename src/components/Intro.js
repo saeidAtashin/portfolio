@@ -33,7 +33,7 @@ const Box = styled(motion.div)`
 
   z-index: 1;
 
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     /* background-color: red; */
   width: 55vw;
 
@@ -53,7 +53,7 @@ const SubBox = styled.div`
     width: 80%;
     height: auto;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@ const Text = styled.div`
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     h6 {
       /* background-color: red; */
       color: black !important;
