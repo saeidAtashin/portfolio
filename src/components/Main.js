@@ -98,7 +98,7 @@ const ABOUT = styled(NavLink)`
   font-weight: bold;
 
   @media (max-width: 800px) {
-    font-size: 14px;
+    font-size: 10px;
   }
 `;
 
@@ -111,7 +111,7 @@ const SKILLS = styled(NavLink)`
   font-size: 18px;
   font-weight: bold;
   @media (max-width: 800px) {
-    font-size: 14px;
+    font-size: 10px;
   }
 `;
 

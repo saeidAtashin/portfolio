@@ -35,6 +35,8 @@ const Box = styled(motion.div)`
 
   @media (max-width: 800px) {
     /* background-color: red; */
+  width: 55vw;
+
   }
 `;
 
@@ -52,7 +54,6 @@ const SubBox = styled.div`
     height: auto;
   }
   @media (max-width: 800px) {
-    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -103,6 +104,9 @@ const Text = styled.div`
       font-size: large;
       font-weight: 600 !important; */
     }
+    h5 {
+      display: none;
+    }
   }
 
   & > *:last-child {
@@ -123,7 +127,7 @@ const Intro = () => {
         <Text>
           <h1>Hi,</h1>
           <h3>I'm Saeid Atashin</h3>
-          <h6>I code react js websites beautiful</h6>
+          <h5>I code react js websites beautiful</h5>
         </Text>
       </SubBox>
       <SubBox>

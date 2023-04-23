@@ -13,6 +13,15 @@ left: 8rem;
 top: 3rem;
 z-index: 10;
 
+
+@media (max-width: 500px) {
+
+    left: 6.5rem;
+top: 3rem;
+  }
+
+
+
 &>*:nth-child(1){
     animation-delay: 0.2s ;
 }
@@ -56,7 +65,7 @@ margin: 0 0.1rem;
 
 @media (max-width: 500px) {
     height: 0.6rem;
-    margin: 0 0.05rem;
+    margin: 0 1px;
   }
 `
 
