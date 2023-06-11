@@ -31,5 +31,16 @@ export const Work = [
         github:"https://github.com/saeidAtashin/candyCrush",
         img:"https://m.media-amazon.com/images/M/MV5BZWRiMjNlMjctOWZlMC00NTA0LWJlZTEtM2IxZDg0NTcyNWYxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_FMjpg_UX1000_.jpg"
     }
+    ,
+    {
+        id:4,
+        name:"Three JS Airplane",
+        description:"This is a site built by TreeJS and it uses react three fiber, gsap and lamina. Working with camera and light and 3D objects is practiced in this project.",
+        tags:["gsap","lamina", "Three.js"],
+        
+        demo:"https://threejsairplane.vercel.app/",
+        github:"https://github.com/saeidAtashin/threejsairplane",
+        img:"https://cdn.pixabay.com/photo/2017/10/01/16/25/aircraft-2806035_1280.jpg"
+    }
 
 ] 

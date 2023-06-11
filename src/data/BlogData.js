@@ -34,6 +34,15 @@ export const Blogs = [
     link: "https://candy-crush-delta.vercel.app/",
   },
   {
+    id: 9,
+    name: "This is THreejs website. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["react three fiber", "fiber", "gsap", "react"],
+    date: "20 May, 2023",
+    imgSrc: "https://cdn.pixabay.com/photo/2016/10/20/17/40/aircraft-1756149_1280.jpg",
+    link: "https://portfolio-atashin.vercel.app/",
+  },
+ 
+  {
     id: 4,
     name: "This is my PORTFOLIO. A animated site using styled component and framer-motion",
     tags: ["react", "redux", "framer-motion", "react-tsparticles"],
@@ -85,4 +94,12 @@ export const Blogs = [
       "https://www.king.com/images/share/banners/candycrush.png?_v=kmoqjd",
     link: "https://candy-crush-delta.vercel.app/",
   },
+  {
+    id: 9,
+    name: "This is THreejs website. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["react three fiber", "fiber", "gsap", "react"],
+    date: "20 May, 2023",
+    imgSrc: "https://cdn.pixabay.com/photo/2016/10/20/17/40/aircraft-1756149_1280.jpg",
+    link: "https://threejsairplane.vercel.app/",
+  }
 ];
