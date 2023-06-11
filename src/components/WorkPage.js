@@ -14,7 +14,7 @@ import { YinYang } from "./AllSvgs";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
-  height: 200vh;
+  height: 300vh;
   position: relative;
   overflow: hidden;
 `;
