@@ -35,8 +35,7 @@ const Box = styled(motion.div)`
 
   @media (max-width: 500px) {
     /* background-color: red; */
-  width: 55vw;
-
+    width: 55vw;
   }
 `;
 
@@ -127,7 +126,10 @@ const Intro = () => {
         <Text>
           <h1>Hi,</h1>
           <h3>I'm Saeid Atashin</h3>
-          <h5>I code react js websites beautiful</h5>
+          <h5>
+            I code react, three.js, next, react native, websites and apps
+            beautiful
+          </h5>
         </Text>
       </SubBox>
       <SubBox>
