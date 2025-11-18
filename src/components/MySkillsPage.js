@@ -9,7 +9,6 @@ import ParticleComponent from "../subComponents/ParticleComponent";
 import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
-  /* background-color: ${(props) => props.theme.text}; */
   width: 95%;
   height: 100vh;
   position: relative;
@@ -18,7 +17,6 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* padding: 2rem; */
   margin-top: 5rem;
   gap: 2rem;
 `;
