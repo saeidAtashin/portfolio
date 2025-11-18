@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponents from "../subComponents/LogoComponents";
@@ -124,6 +124,15 @@ to{
 }
 `;
 
+const IconWrapper = styled.div`
+  display: inline-block;
+  
+  & > svg {
+    animation: ${rotates} infinite linear;
+    animation-duration: ${(props) => props.animationDuration}s;
+  }
+`;
+
 const Center = styled.button`
   position: absolute;
   top: ${(props) => (props.click ? "85%" : "50%")};
@@ -138,11 +147,12 @@ const Center = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 1.5s ease-in-out;
+  transition: ${(props) => 
+    props.click 
+      ? "top 1.5s ease-in-out 0.6s, left 1.5s ease-in-out 0.6s" 
+      : "top 1.5s ease-in-out 0.6s, left 1.5s ease-in-out 0.6s"
+  };
 
-  & > :first-child {
-    animation: ${rotates} infinite 1.5s linear;
-  }
   & > :last-child {
     padding-top: 1rem;
     font-size: ${(props) => (props.click ? "0" : "16px")};
@@ -166,8 +176,67 @@ const DarkDiv = styled.div`
 
 const Main = () => {
   const [click, setClick] = useState(false);
+  const [animationDuration, setAnimationDuration] = useState(1.5);
+  const animationRef = useRef(null);
+  const rafRef = useRef(null);
 
-  const handleClick = () => setClick(!click);
+  // Smooth interpolation function using easing
+  const easeInOutCubic = (t) => {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  };
+
+  const smoothTransitionSpeed = (startSpeed, endSpeed, duration) => {
+    const startTime = performance.now();
+    
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+      
+      const currentSpeed = startSpeed + (endSpeed - startSpeed) * easedProgress;
+      setAnimationDuration(currentSpeed);
+      
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(animate);
+      }
+    };
+    
+    rafRef.current = requestAnimationFrame(animate);
+  };
+
+  const handleClick = () => {
+    const newClickState = !click;
+    
+    // Cancel any ongoing animations
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+    if (animationRef.current) {
+      clearTimeout(animationRef.current);
+    }
+    
+    // Start fast rotation immediately for both directions
+    setAnimationDuration(0.3);
+    
+    // Update click state
+    setClick(newClickState);
+    
+    // Smoothly return to normal speed after movement completes (0.6s delay + 1.5s transition = 2.1s)
+    animationRef.current = setTimeout(() => {
+      smoothTransitionSpeed(0.3, 1.5, 800); // Transition over 0.8s
+    }, 2100);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (animationRef.current) {
+        clearTimeout(animationRef.current);
+      }
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, []);
 
   return (
     <MainContainer>
@@ -179,12 +248,14 @@ const Main = () => {
         <SocialIcons theme={click ? "dark" : "light"} />
 
         <Center click={click} onClick={() => handleClick()}>
-          <YinYang
-            width={click ? "120" : "200"}
-            height={click ? "120" : "200"}
-            fill="currentColor"
-            style={{ transition: "all 1.5s ease-in-out" }}
-          />
+          <IconWrapper animationDuration={animationDuration}>
+            <YinYang
+              width={click ? "120" : "200"}
+              height={click ? "120" : "200"}
+              fill="currentColor"
+              style={{ transition: "all 1.5s ease-in-out" }}
+            />
+          </IconWrapper>
           <span>click here</span>
         </Center>
 

@@ -42,4 +42,26 @@ export const Work = [
     github: "https://github.com/saeidAtashin/threejsairplane",
     img: "https://images.stockcake.com/public/f/b/6/fb6acf1b-fcaa-4152-b48b-6b0e2b0c5374_large/airplane-mid-flight-stockcake.jpg",
   },
+  {
+    id: 5,
+    name: "3D Tetris game",
+    description:
+      "This is 3D Tetris game. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["gsap", "lamina", "Three.js"],
+
+    demo: "https://3d-tetris-gamma.vercel.app/",
+    github: "https://github.com/saeidAtashin/3d-tetris",
+    img: "https://scienceline.org/wp-content/uploads/2020/01/tetris-1536x1024.jpg",
+  },
+  {
+    id: 4,
+    name: "3D Hard Snake game",
+    description:
+      "This is 3D Snake game. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["gsap", "lamina", "Three.js"],
+
+    demo: "https://3d-hard-snake.vercel.app/",
+    github: "https://github.com/saeidAtashin/3d-hard-snake/tree/master/3d-snake-hard",
+    img: "https://images.ctfassets.net/wcfotm6rrl7u/6LMSGFiFadFWFf1gcQajFb/2a284d47092d116a5d1253c79bef5af1/snake-day-FEATURED-desktop.png?w=1593&h=896&fm=avif&q=88",
+  },
 ];

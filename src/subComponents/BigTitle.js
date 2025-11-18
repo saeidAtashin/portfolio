@@ -10,6 +10,7 @@ const Text = styled.div`
   font-size: calc(5rem + 5vw);
   font-weight: bold;
   z-index: 0;
+  pointer-events: none;
 `;
 
 const BigTitle = (props) => {

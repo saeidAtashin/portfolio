@@ -20,8 +20,7 @@ export const Blogs = [
     name: "Simplified movie site similar to Netflix using react axios react-redux",
     tags: ["react", "redux", "axios"],
     date: "5 July, 2021",
-    imgSrc:
-      "https://upload.wikimedia.org/wikipedia/en/f/f4/Netflix_-_English.jpg",
+    imgSrc: "https://cdn.mos.cms.futurecdn.net/Yy247gYvzaMZXprhZHXy4E.jpg",
     link: "https://netflix-used-api.vercel.app/",
   },
   {
@@ -30,7 +29,7 @@ export const Blogs = [
     tags: ["react", "css", "axios", "dotenv"],
     date: "6 July, 2021",
     imgSrc:
-      "https://www.king.com/images/share/banners/candycrush.png?_v=kmoqjd",
+      "https://www.cityam.com/wp-content/uploads/2023/09/CCS-Candies-Key-Art-4-3-Logo-e1695898049123.jpg?resize=742,557",
     link: "https://candy-crush-delta.vercel.app/",
   },
   {
@@ -38,10 +37,28 @@ export const Blogs = [
     name: "This is Threejs website. A 3D site using react three fiber, gsap and lamina.",
     tags: ["react three fiber", "fiber", "gsap", "react"],
     date: "20 May, 2023",
-    imgSrc: "https://cdn.pixabay.com/photo/2016/10/20/17/40/aircraft-1756149_1280.jpg",
+    imgSrc:
+      "https://images.stockcake.com/public/f/b/6/fb6acf1b-fcaa-4152-b48b-6b0e2b0c5374_large/airplane-mid-flight-stockcake.jpg",
     link: "https://threejsairplane.vercel.app//",
   },
- 
+  {
+    id: 12,
+    name: "This is 3D Tetris game. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["react three fiber", "fiber", "gsap", "react"],
+    date: "20 May, 2023",
+    imgSrc:
+      "https://scienceline.org/wp-content/uploads/2020/01/tetris-1536x1024.jpg",
+    link: "https://3d-tetris-gamma.vercel.app/",
+  },
+  {
+    id: 13,
+    name: "This is 3D Hard Snake game. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["react three fiber", "fiber", "gsap", "react"],
+    date: "20 May, 2023",
+    imgSrc:
+      "https://images.ctfassets.net/wcfotm6rrl7u/6LMSGFiFadFWFf1gcQajFb/2a284d47092d116a5d1253c79bef5af1/snake-day-FEATURED-desktop.png?w=1593&h=896&fm=avif&q=88",
+    link: "https://3d-hard-snake.vercel.app/",
+  },
   {
     id: 4,
     name: "This is my PORTFOLIO. A animated site using styled component and framer-motion",
@@ -55,8 +72,7 @@ export const Blogs = [
     name: "Simplified movie site similar to Netflix using react axios react-redux",
     tags: ["react", "redux", "axios"],
     date: "5 July, 2021",
-    imgSrc:
-      "https://upload.wikimedia.org/wikipedia/en/f/f4/Netflix_-_English.jpg",
+    imgSrc: "https://cdn.mos.cms.futurecdn.net/Yy247gYvzaMZXprhZHXy4E.jpg",
     link: "https://netflix-used-api.vercel.app/",
   },
 
@@ -91,7 +107,7 @@ export const Blogs = [
     tags: ["react", "css", "axios", "dotenv"],
     date: "6 July, 2021",
     imgSrc:
-      "https://www.king.com/images/share/banners/candycrush.png?_v=kmoqjd",
+      "https://www.cityam.com/wp-content/uploads/2023/09/CCS-Candies-Key-Art-4-3-Logo-e1695898049123.jpg?resize=742,557",
     link: "https://candy-crush-delta.vercel.app/",
   },
   {
@@ -99,7 +115,26 @@ export const Blogs = [
     name: "This is Threejs website. A 3D site using react three fiber, gsap and lamina.",
     tags: ["react three fiber", "fiber", "gsap", "react"],
     date: "20 May, 2023",
-    imgSrc: "https://cdn.pixabay.com/photo/2016/10/20/17/40/aircraft-1756149_1280.jpg",
+    imgSrc:
+      "https://images.stockcake.com/public/f/b/6/fb6acf1b-fcaa-4152-b48b-6b0e2b0c5374_large/airplane-mid-flight-stockcake.jpg",
     link: "https://threejsairplane.vercel.app/",
-  }
+  },
+  {
+    id: 14,
+    name: "This is 3D Tetris game. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["react three fiber", "fiber", "gsap", "react"],
+    date: "20 May, 2023",
+    imgSrc:
+      "https://scienceline.org/wp-content/uploads/2020/01/tetris-1536x1024.jpg",
+    link: "https://3d-tetris-gamma.vercel.app/",
+  },
+  {
+    id: 15,
+    name: "This is 3D Hard Snake game. A 3D site using react three fiber, gsap and lamina.",
+    tags: ["react three fiber", "fiber", "gsap", "react"],
+    date: "20 May, 2023",
+    imgSrc:
+      "https://images.ctfassets.net/wcfotm6rrl7u/6LMSGFiFadFWFf1gcQajFb/2a284d47092d116a5d1253c79bef5af1/snake-day-FEATURED-desktop.png?w=1593&h=896&fm=avif&q=88",
+    link: "https://3d-hard-snake.vercel.app/",
+  },
 ];

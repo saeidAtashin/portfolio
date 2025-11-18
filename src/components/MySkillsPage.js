@@ -10,20 +10,23 @@ import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
   /* background-color: ${(props) => props.theme.text}; */
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  margin-top: 5rem;
+  gap: 2rem;
 `;
 const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
   padding: 2rem;
-  width: 30vw;
-  height: 60vh;
   z-index: 3;
   line-height: 1.5;
 
@@ -32,7 +35,8 @@ const Main = styled.div`
   font-family: "Ubuntu Mono", monospace;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  overflow-y: auto;
 
   &:hover {
     color: ${(props) => props.theme.body};
@@ -72,40 +76,110 @@ const MySkillsPage = () => {
         <SocilIcons theme="light" />
         <PowerButton />
         <ParticleComponent theme="light" />
-      <BigTitle text="MY SKILLS" top= "80%" right="30%"/>
+        <BigTitle text="MY SKILLS" top="80%" right="30%" />
+
         <Main>
-          
+          <Title>
+            <Design width={40} height={40} /> HTML & CSS:
+          </Title>
+          <Description>
+            - Semantic HTML5, Accessibility (ARIA)
+            <br />
+            - CSS3, Flexbox, Grid, Animations & Transitions
+            <br />
+            - Responsive & Mobile-First Design
+            <br />
+            - CSS Modules, Styled Components, JSS, UI Kits
+            <br />- TailwindCSS, Material-UI, Ant Design, React Bootstrap
+          </Description>
+        </Main>
+
+        <Main>
+          <Title>
+            <Design width={40} height={40} /> JavaScript:
+          </Title>
+          <Description>
+            - ES6+ (let/const, arrow functions, template literals,
+            destructuring)
+            <br />
+            - DOM Manipulation, Event Handling
+            <br />
+            - Functional Programming, Array & Object Methods
+            <br />
+            - Promises, Async/Await, Fetch / Axios
+            <br />- Error Handling, Debugging & Dev Tools
+          </Description>
+        </Main>
+
+        <Main>
           <Title>
             <Design width={40} height={40} /> React & Libraries:
           </Title>
           <Description>
-            - JSX, Class-Based Component, Functional Component, Lifecycle,
-            Hooks, Context API, Form Validations, HOC, Container-Presentational,
-            Component Architecture, Prop Types
+            - JSX, Functional Components, Class Components
             <br />
-            - Material-UI, UIKits, Styled Component, CSS Modules, Page
-            Animations
+            - Lifecycle Methods, Hooks (useState, useEffect, useReducer,
+            useMemo, useCallback, useRef)
             <br />
-            - Redux, React Router
-            <br />- Environments Variables, React Dev Tools
+            - Context API, Redux, Redux Toolkit, Zustand (optional)
+            <br />
+            - React Router, Higher-Order Components (HOC),
+            Container-Presentational Pattern
+            <br />
+            - Custom Hooks, Form Validations (Formik, Yup, React Hook Form)
+            <br />
+            - React Templates (JS & TS), Page Animations, Framer Motion
+            <br />- Socket.IO / WebSockets, REST & GraphQL Integration
           </Description>
         </Main>
+
         <Main>
           <Title>
-            <Design width={40} height={40} /> JavaScript , HTML & CSS:
+            <Design width={40} height={40} /> Next.js:
           </Title>
           <Description>
-            - ES6, Async Programming, OOP in JS - Pure JS SPA, Templating, DOM
-            Manipulation
-            {/* <br /> */}- HTML5, CSS3, RWD (Responsive Web Design), SVG, LESS,
-            SASS
-            {/* <br /> */}- Form Validation
-          </Description>
-          <strong style={{ fontSize: "1.1rem" }}>SIDE SKILLS</strong>
-          <Description>
-            -AJAX: REST API, HTTP -JQUERY, BOOTSTRAP 4/5 NPM, CRA, Express
+            - Server-Side Rendering (SSR), Static Site Generation (SSG),
+            Incremental Static Regeneration (ISR)
             <br />
-            -git,gitflow
+            - API Routes, Middleware, Dynamic Routing
+            <br />
+            - Environment Variables, Next.js Image Optimization
+            <br />- Authentication & Authorization (JWT, NextAuth)
+          </Description>
+        </Main>
+
+        <Main>
+          <Title>
+            <Design width={40} height={40} /> TypeScript:
+          </Title>
+          <Description>
+            - Strong Typing for React & Node.js
+            <br />
+            - Interfaces & Types, Generics
+            <br />
+            - Type-safe Props, State & Context
+            <br />- Integration with Redux Toolkit, Formik & React Hook Form
+          </Description>
+        </Main>
+
+        <Main>
+          <Title>
+            <Design width={40} height={40} /> React Native:
+          </Title>
+          <Description>
+            - Core Components (View, Text, ScrollView, FlatList, etc.)
+            <br />
+            - Navigation (React Navigation)
+            <br />
+            - State Management (Redux, Context API)
+            <br />
+            - Styling (StyleSheet, Styled Components, TailwindCSS with
+            Nativewind)
+            <br />
+            - API Integration (REST, GraphQL), AsyncStorage
+            <br />
+            - Animations (Reanimated, Lottie)
+            <br />- Debugging & Performance Optimization
           </Description>
         </Main>
       </Box>
