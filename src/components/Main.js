@@ -126,7 +126,7 @@ to{
 
 const IconWrapper = styled.div`
   display: inline-block;
-  
+
   & > svg {
     animation: ${rotates} infinite linear;
     animation-duration: ${(props) => props.animationDuration}s;
@@ -147,11 +147,10 @@ const Center = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: ${(props) => 
-    props.click 
-      ? "top 1.5s ease-in-out 0.6s, left 1.5s ease-in-out 0.6s" 
-      : "top 1.5s ease-in-out 0.6s, left 1.5s ease-in-out 0.6s"
-  };
+  transition: ${(props) =>
+    props.click
+      ? "top 1.5s ease-in-out 0.6s, left 1.5s ease-in-out 0.6s"
+      : "top 1.5s ease-in-out 0.6s, left 1.5s ease-in-out 0.6s"};
 
   & > :last-child {
     padding-top: 1rem;
@@ -180,50 +179,45 @@ const Main = () => {
   const animationRef = useRef(null);
   const rafRef = useRef(null);
 
-  // Smooth interpolation function using easing
   const easeInOutCubic = (t) => {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   };
 
   const smoothTransitionSpeed = (startSpeed, endSpeed, duration) => {
     const startTime = performance.now();
-    
+
     const animate = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easedProgress = easeInOutCubic(progress);
-      
+
       const currentSpeed = startSpeed + (endSpeed - startSpeed) * easedProgress;
       setAnimationDuration(currentSpeed);
-      
+
       if (progress < 1) {
         rafRef.current = requestAnimationFrame(animate);
       }
     };
-    
+
     rafRef.current = requestAnimationFrame(animate);
   };
 
   const handleClick = () => {
     const newClickState = !click;
-    
-    // Cancel any ongoing animations
+
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
     }
     if (animationRef.current) {
       clearTimeout(animationRef.current);
     }
-    
-    // Start fast rotation immediately for both directions
+
     setAnimationDuration(0.3);
-    
-    // Update click state
+
     setClick(newClickState);
-    
-    // Smoothly return to normal speed after movement completes (0.6s delay + 1.5s transition = 2.1s)
+
     animationRef.current = setTimeout(() => {
-      smoothTransitionSpeed(0.3, 1.5, 800); // Transition over 0.8s
+      smoothTransitionSpeed(0.3, 1.5, 800);
     }, 2100);
   };
 

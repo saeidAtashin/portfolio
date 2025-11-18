@@ -4,8 +4,6 @@ import "./App.css";
 import { lightTheme } from "./components/Themes";
 import GlobalStyle from "./data/GlobalStyle";
 
-// Components
-
 import Main from "./components/Main";
 import AboutPage from "./components/AboutPage";
 import BlogPage from "./components/BlogPage";

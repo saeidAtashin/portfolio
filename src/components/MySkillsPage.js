@@ -10,7 +10,7 @@ import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
   /* background-color: ${(props) => props.theme.text}; */
-  width: 90vw;
+  width: 95%;
   height: 100vh;
   position: relative;
   display: flex;
@@ -18,7 +18,7 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2rem;
+  /* padding: 2rem; */
   margin-top: 5rem;
   gap: 2rem;
 `;
@@ -29,9 +29,8 @@ const Main = styled.div`
   padding: 2rem;
   z-index: 3;
   line-height: 1.5;
-
+  width: 23%;
   cursor: pointer;
-
   font-family: "Ubuntu Mono", monospace;
   display: flex;
   flex-direction: column;
