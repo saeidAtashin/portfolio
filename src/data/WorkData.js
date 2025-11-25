@@ -5,7 +5,7 @@ export const Work = [
     description:
       "A Ecommerce shop using react and redux toolkit. Using fake REST API with the ability to edit and delete as Admin",
     tags: ["RESTAPI", "toastify", "bootstrap"],
-    demo: "https://atashin-ecommerce-shop.vercel.app//product",
+    demo: "https://atashin-ecommerce-shop.vercel.app",
     github: "https://github.com/saeidAtashin/ecommerce",
     img: "https://www.freeiconspng.com/thumbs/responsive-icon/responsive-icon-9.png",
   },

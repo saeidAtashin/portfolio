@@ -13,7 +13,7 @@ export const Blogs = [
     date: "13 May, 2021",
     imgSrc:
       "https://image.cnbcfm.com/api/v1/image/107168822-1671538596693-gettyimages-1443880219-2a5a9193_8cc60243-f700-4596-b223-91ea0c1508c3.jpeg?v=1679347468&w=1920&h=1080",
-    link: "https://atashin-ecommerce-shop.vercel.app//product",
+    link: "https://atashin-ecommerce-shop.vercel.app",
   },
   {
     id: 2,
@@ -90,7 +90,7 @@ export const Blogs = [
     date: "13 May, 2021",
     imgSrc:
       "https://image.cnbcfm.com/api/v1/image/107168822-1671538596693-gettyimages-1443880219-2a5a9193_8cc60243-f700-4596-b223-91ea0c1508c3.jpeg?v=1679347468&w=1920&h=1080",
-    link: "https://atashin-ecommerce-shop.vercel.app//product",
+    link: "https://atashin-ecommerce-shop.vercel.app",
   },
 
   {
