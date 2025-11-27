@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
 import { motion } from "framer-motion";
@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import LogoComponent from "../subComponents/LogoComponents";
 import SocilIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
-import { Work } from "../data/WorkData";
 
 import BigTitle from "../subComponents/BigTitle";
 import Card from "../subComponents/Card";
@@ -48,9 +47,42 @@ const container = {
   },
 };
 
+const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  color: ${(props) => props.theme.text};
+  font-size: 1.5rem;
+`;
+
 const WorkPage = () => {
   const ref = useRef(null);
   const yingyang = useRef(null);
+  const [works, setWorks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchWorks = async () => {
+      try {
+        const response = await fetch(
+          "https://heuristic-proskuriakova-61zoksgo6.liara.run/works"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch works");
+        }
+        const data = await response.json();
+        setWorks(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchWorks();
+  }, []);
 
   useEffect(() => {
     const rotate = () => {
@@ -72,9 +104,13 @@ const WorkPage = () => {
         <SocilIcons theme="dark" />
         <PowerButton />
         <Main ref={ref}>
-          {Work.map((d) => (
-            <Card key={d.id} data={d} image2={d.img}></Card>
-          ))}
+          {loading ? (
+            <Loading>Loading...</Loading>
+          ) : error ? (
+            <Loading>Error: {error}</Loading>
+          ) : (
+            works.map((d) => <Card key={d.id} data={d} image2={d.img}></Card>)
+          )}
         </Main>
         <Rotate
           ref={yingyang}

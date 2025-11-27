@@ -5,7 +5,6 @@ import LogoComponents from "../subComponents/LogoComponents";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
 
-import { Blogs } from "../data/BlogData";
 import BlogComponent from "./BlogComponent";
 import AnchorComponent from "../subComponents/Anchor";
 import BigTitle from "../subComponents/BigTitle";
@@ -59,12 +58,45 @@ const container = {
   },
 };
 
+const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.5rem;
+  color: ${(props) => props.theme.text};
+`;
+
 const BlogPage = () => {
   const [numbers, setNumbers] = useState(0);
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let num = (window.innerHeight - 70) / 30;
     setNumbers(parseInt(num));
+  }, []);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(
+          "https://heuristic-proskuriakova-61zoksgo6.liara.run/blogs"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch blogs");
+        }
+        const data = await response.json();
+        setBlogs(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
   }, []);
   return (
     <MainContainer
@@ -83,11 +115,17 @@ const BlogPage = () => {
 
         <AnchorComponent numbers={numbers} />
         <Center>
-          <Grid>
-            {Blogs.map((blog) => {
-              return <BlogComponent key={blog.id} blog={blog} />;
-            })}
-          </Grid>
+          {loading ? (
+            <Loading>Loading...</Loading>
+          ) : error ? (
+            <Loading>Error: {error}</Loading>
+          ) : (
+            <Grid>
+              {blogs.map((blog) => {
+                return <BlogComponent key={blog.id} blog={blog} />;
+              })}
+            </Grid>
+          )}
         </Center>
         <BigTitle text="BLOG" top="4rem" left="4rem" />
       </Constainer>
