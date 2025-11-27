@@ -14,9 +14,9 @@ import { YinYang } from "./AllSvgs";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
-  height: 300vh;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  padding-bottom: 100px;
 `;
 
 const Main = styled(motion.ul)`
@@ -54,11 +54,15 @@ const WorkPage = () => {
 
   useEffect(() => {
     const rotate = () => {
-      yingyang.current.style.transform = `translateY(${-window.pageYOffset}%)`;
-      yingyang.current.style.transform = `rotate(${-window.pageYOffset}deg)`;
+      if (yingyang.current) {
+        const scrollY = window.scrollY || window.pageYOffset;
+        yingyang.current.style.transform = `rotate(${scrollY}deg)`;
+      }
     };
 
-    return () => window.addEventListener("scroll", rotate);
+    window.addEventListener("scroll", rotate, { passive: true });
+
+    return () => window.removeEventListener("scroll", rotate);
   }, []);
 
   return (
