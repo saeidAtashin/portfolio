@@ -54,6 +54,7 @@ const Box = styled(motion.li)`
 `;
 const Title = styled.h2`
   font-size: calc(1em + 0.5vw);
+  font-family: "Source Sans Pro", "Vazirmatn", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,8 +63,9 @@ const Title = styled.h2`
 
 const Description = styled.h2`
   font-size: calc(0.8em + 0.3vw);
-  font-family: "Karla", sans-serif;
+  font-family: "Karla", "Vazirmatn", sans-serif;
   font-weight: 500;
+  line-height: 1.6;
 `;
 const Tags = styled.div`
   border-top: 2px solid ${(props) => props.theme.body};

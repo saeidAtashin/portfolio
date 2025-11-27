@@ -1,5 +1,16 @@
 export const Work = [
   {
+    id: 0,
+    name: "VAM30.com (وامسی)",
+    description:
+      "A Persian fintech platform for online installment purchases. As Head of Front-End for 2 years, I led UI/UX development for credit applications, product browsing, and digital approval workflows serving thousands of users.",
+    tags: ["React", "Redux", "REST API", "Responsive Design"],
+
+    demo: "https://vam30.com",
+    github: "",
+    img: "https://vam30.com/logo.png",
+  },
+  {
     id: 1,
     name: "Ecommerce Shop",
     description:
@@ -61,7 +72,8 @@ export const Work = [
     tags: ["gsap", "lamina", "Three.js"],
 
     demo: "https://3d-hard-snake.vercel.app/",
-    github: "https://github.com/saeidAtashin/3d-hard-snake/tree/master/3d-snake-hard",
+    github:
+      "https://github.com/saeidAtashin/3d-hard-snake/tree/master/3d-snake-hard",
     img: "https://images.ctfassets.net/wcfotm6rrl7u/6LMSGFiFadFWFf1gcQajFb/2a284d47092d116a5d1253c79bef5af1/snake-day-FEATURED-desktop.png?w=1593&h=896&fm=avif&q=88",
   },
 ];

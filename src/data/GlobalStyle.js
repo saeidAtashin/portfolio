@@ -23,8 +23,8 @@ body{
     margin:0 ;
     padding: 0;
     color: "#FCF6F4";
-    overflow-x:h hidden;
-    font-family: 'Source Sans Pro' , sans-serif;
+    overflow-x: hidden;
+    font-family: 'Source Sans Pro', 'Vazirmatn', sans-serif;
     margin: 0;
   padding: 0;
   box-sizing: border-box;
