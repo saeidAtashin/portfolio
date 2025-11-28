@@ -74,7 +74,7 @@ const SubBox = styled.div`
 `;
 const Text = styled.div`
   font-size: calc(1em + 1.5vw);
-  color: ${(props) => props.theme.body};
+  color: ${(props) => (props.masked ? "#fff" : props.theme.body)};
   padding: 2rem;
   cursor: pointer;
 
@@ -82,9 +82,20 @@ const Text = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 
+  h1,
+  h3,
+  h5 {
+    color: ${(props) => (props.masked ? "#fff" : props.theme.body)};
+    text-shadow: ${(props) =>
+      props.masked ? "0 2px 10px rgba(0, 0, 0, 0.8)" : "none"};
+  }
+
   h6 {
     font-size: large;
     font-weight: 600 !important;
+    color: ${(props) => (props.masked ? "#fff" : "inherit")};
+    text-shadow: ${(props) =>
+      props.masked ? "0 2px 10px rgba(0, 0, 0, 0.8)" : "none"};
 
     h6 {
       color: black !important;
@@ -98,7 +109,7 @@ const Text = styled.div`
   @media (max-width: 500px) {
     h6 {
       /* background-color: red; */
-      color: black !important;
+      color: ${(props) => (props.masked ? "#fff" : "black")} !important;
       /* text-align: center;
       font-size: large;
       font-weight: 600 !important; */
@@ -109,13 +120,18 @@ const Text = styled.div`
   }
 
   & > *:last-child {
-    color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
+    color: ${(props) =>
+      props.masked
+        ? "rgba(255, 255, 255, 0.9)"
+        : `rgba(${props.theme.bodyRgba},0.6)`};
     font-size: calc(0.5rem +1.5vw);
     font-weight: 300;
+    text-shadow: ${(props) =>
+      props.masked ? "0 2px 10px rgba(0, 0, 0, 0.8)" : "none"};
   }
 `;
 
-const Intro = () => {
+const Intro = ({ masked = false }) => {
   return (
     <Box
       initial={{ height: 0 }}
@@ -123,7 +139,7 @@ const Intro = () => {
       transition={{ type: "spring", duration: 2, delay: 1 }}
     >
       <SubBox>
-        <Text>
+        <Text masked={masked}>
           <h1>Hi,</h1>
           <h3>I'm Saeid Atashin</h3>
           <h5>
@@ -138,7 +154,7 @@ const Intro = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          <Text>
+          <Text masked={masked}>
             <h6>I code react js websites beautiful</h6>
           </Text>
 

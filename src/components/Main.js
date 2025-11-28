@@ -368,10 +368,35 @@ const LastName = styled.span`
   padding: 2px 4px;
 `;
 
+const IntroOverlay = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  mask-image: ${(props) =>
+    props.mouseX !== null && props.mouseY !== null
+      ? `radial-gradient(circle 4rem at ${props.mouseX}px ${props.mouseY}px, black 0%, transparent 100%)`
+      : "radial-gradient(circle 4rem at 50% 50%, transparent 0%, transparent 100%)"};
+  -webkit-mask-image: ${(props) =>
+    props.mouseX !== null && props.mouseY !== null
+      ? `radial-gradient(circle 4rem at ${props.mouseX}px ${props.mouseY}px, black 0%, transparent 100%)`
+      : "radial-gradient(circle 4rem at 50% 50%, transparent 0%, transparent 100%)"};
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  transition: mask-image 0.1s ease-out, -webkit-mask-image 0.1s ease-out;
+`;
+
 const Main = () => {
   const [click, setClick] = useState(false);
   const [animationDuration, setAnimationDuration] = useState(1.5);
   const [nameHovered, setNameHovered] = useState(false);
+  const [screenHovered, setScreenHovered] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   const animationRef = useRef(null);
   const rafRef = useRef(null);
 
@@ -418,7 +443,20 @@ const Main = () => {
   };
 
   useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (!click && screenHovered) {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      }
+    };
+
+    if (!click && screenHovered) {
+      window.addEventListener("mousemove", handleMouseMove);
+    } else {
+      setMousePosition({ x: null, y: null });
+    }
+
     return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
       if (animationRef.current) {
         clearTimeout(animationRef.current);
       }
@@ -426,10 +464,13 @@ const Main = () => {
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, []);
+  }, [click, screenHovered]);
 
   return (
-    <MainContainer>
+    <MainContainer
+      onMouseEnter={() => !click && setScreenHovered(true)}
+      onMouseLeave={() => setScreenHovered(false)}
+    >
       <DarkDiv click={click} />
 
       <ArrowToBlog>
@@ -559,7 +600,23 @@ const Main = () => {
           </SKILLS>
         </BottoBar>
       </Container>
-      {click ? <Intro click={click} /> : null}
+      {click ? (
+        <Intro click={click} />
+      ) : (
+        <IntroOverlay
+          mouseX={mousePosition.x}
+          mouseY={mousePosition.y}
+          animate={{
+            opacity: screenHovered ? 1 : 0,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
+        >
+          <Intro click={click} masked={true} />
+        </IntroOverlay>
+      )}
     </MainContainer>
   );
 };
