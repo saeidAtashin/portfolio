@@ -10,7 +10,7 @@ import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
   width: 95%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -19,6 +19,7 @@ const Box = styled.div`
   flex-wrap: wrap;
   margin-top: 5rem;
   gap: 2rem;
+  padding-bottom: 5rem;
 `;
 const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};

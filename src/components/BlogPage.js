@@ -18,8 +18,9 @@ const MainContainer = styled(motion.div)`
   background-attachment: fixed;
   background-position: center;
   width: 100vw;
-  height: auto;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
 `;
 const Constainer = styled.div`

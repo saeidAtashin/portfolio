@@ -11,9 +11,10 @@ import BigTitle from "../subComponents/BigTitle";
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 const float = keyframes`

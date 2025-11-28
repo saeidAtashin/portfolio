@@ -16,9 +16,10 @@ import SoundBar from "./subComponents/SoundBar";
 const TransitionWrapper = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #000;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 const pageVariants = {
@@ -67,7 +68,7 @@ function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", minHeight: "100vh" }}
                 >
                   <Main />
                 </motion.div>
@@ -82,7 +83,7 @@ function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", minHeight: "100vh" }}
                 >
                   <AboutPage />
                 </motion.div>
@@ -97,7 +98,7 @@ function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", minHeight: "100vh" }}
                 >
                   <BlogPage />
                 </motion.div>
@@ -112,7 +113,7 @@ function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", minHeight: "100vh" }}
                 >
                   <Work />
                 </motion.div>
@@ -127,7 +128,7 @@ function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", minHeight: "100vh" }}
                 >
                   <MySkillsPage />
                 </motion.div>
