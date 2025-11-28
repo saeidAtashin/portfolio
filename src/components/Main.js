@@ -449,14 +449,52 @@ const Main = () => {
       }
     };
 
-    if (!click && screenHovered) {
-      window.addEventListener("mousemove", handleMouseMove);
+    const handleTouchMove = (e) => {
+      if (!click) {
+        e.preventDefault();
+        const touch = e.touches[0] || e.changedTouches[0];
+        if (touch) {
+          setMousePosition({ x: touch.clientX, y: touch.clientY });
+          setScreenHovered(true);
+        }
+      }
+    };
+
+    const handleTouchStart = (e) => {
+      if (!click) {
+        const touch = e.touches[0];
+        if (touch) {
+          setMousePosition({ x: touch.clientX, y: touch.clientY });
+          setScreenHovered(true);
+        }
+      }
+    };
+
+    const handleTouchEnd = () => {
+      if (!click) {
+        setScreenHovered(false);
+        setMousePosition({ x: null, y: null });
+      }
+    };
+
+    if (!click) {
+      if (screenHovered) {
+        window.addEventListener("mousemove", handleMouseMove);
+      }
+      window.addEventListener("touchstart", handleTouchStart, {
+        passive: false,
+      });
+      window.addEventListener("touchmove", handleTouchMove, { passive: false });
+      window.addEventListener("touchend", handleTouchEnd);
     } else {
       setMousePosition({ x: null, y: null });
     }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
       if (animationRef.current) {
         clearTimeout(animationRef.current);
       }

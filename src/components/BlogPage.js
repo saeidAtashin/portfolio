@@ -9,6 +9,7 @@ import BlogComponent from "./BlogComponent";
 import AnchorComponent from "../subComponents/Anchor";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
+import { Blogs as LocalBlogs } from "../data/BlogData";
 
 const MainContainer = styled(motion.div)`
   background-image: url(${img});
@@ -88,9 +89,17 @@ const BlogPage = () => {
           throw new Error("Failed to fetch blogs");
         }
         const data = await response.json();
-        setBlogs(data);
+        
+        // Check if API data is empty or invalid, use local data as fallback
+        if (!data || data.length === 0 || !Array.isArray(data)) {
+          setBlogs(LocalBlogs);
+        } else {
+          setBlogs(data);
+        }
       } catch (err) {
-        setError(err.message);
+        // On error, use local data as fallback
+        setBlogs(LocalBlogs);
+        setError(null); // Clear error since we have fallback data
       } finally {
         setLoading(false);
       }

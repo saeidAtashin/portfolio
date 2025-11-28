@@ -10,6 +10,7 @@ import PowerButton from "../subComponents/PowerButton";
 import BigTitle from "../subComponents/BigTitle";
 import Card from "../subComponents/Card";
 import { YinYang } from "./AllSvgs";
+import { Work as LocalWorks } from "../data/WorkData";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -73,9 +74,17 @@ const WorkPage = () => {
           throw new Error("Failed to fetch works");
         }
         const data = await response.json();
-        setWorks(data);
+        
+        // Check if API data is empty or invalid, use local data as fallback
+        if (!data || data.length === 0 || !Array.isArray(data)) {
+          setWorks(LocalWorks);
+        } else {
+          setWorks(data);
+        }
       } catch (err) {
-        setError(err.message);
+        // On error, use local data as fallback
+        setWorks(LocalWorks);
+        setError(null); // Clear error since we have fallback data
       } finally {
         setLoading(false);
       }
