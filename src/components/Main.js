@@ -348,9 +348,30 @@ const ArrowToSkills = styled.div`
   }
 `;
 
+const NameContainer = styled.span`
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+`;
+
+const FirstName = styled.span`
+  transition: all 0.3s ease;
+  color: ${(props) => (props.hovered ? "#fff" : "currentColor")};
+  background-color: ${(props) => (props.hovered ? "#000" : "transparent")};
+  padding: ${(props) => (props.hovered ? "2px 4px" : "0")};
+`;
+
+const LastName = styled.span`
+  transition: all 0.3s ease;
+  color: ${(props) => (props.hovered ? "#000" : "#fff")};
+  background-color: ${(props) => (props.hovered ? "#fff" : "#000")};
+  padding: 2px 4px;
+`;
+
 const Main = () => {
   const [click, setClick] = useState(false);
   const [animationDuration, setAnimationDuration] = useState(1.5);
+  const [nameHovered, setNameHovered] = useState(false);
   const animationRef = useRef(null);
   const rafRef = useRef(null);
 
@@ -441,7 +462,13 @@ const Main = () => {
               style={{ transition: "all 1.5s ease-in-out" }}
             />
           </IconWrapper>
-          <span>click here</span>
+          <NameContainer
+            onMouseEnter={() => setNameHovered(true)}
+            onMouseLeave={() => setNameHovered(false)}
+          >
+            <FirstName hovered={nameHovered}>Saeid</FirstName>{" "}
+            <LastName hovered={nameHovered}>Atashin</LastName>
+          </NameContainer>
         </Center>
 
         <Contact
