@@ -194,3 +194,60 @@ export const Develope = (props) => {
     </svg>
   );
 };
+
+export const ArrowDown = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      data-prefix="fas"
+      data-icon="arrow-down"
+      className="prefix__svg-inline--fa prefix__fa-arrow-down prefix__fa-w-14"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+      {...props}
+    >
+      <path
+        fill={props.fill}
+        d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+      />
+    </svg>
+  );
+};
+
+export const ArrowRight = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      data-prefix="fas"
+      data-icon="arrow-right"
+      className="prefix__svg-inline--fa prefix__fa-arrow-right prefix__fa-w-14"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+      {...props}
+    >
+      <path
+        fill={props.fill}
+        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+      />
+    </svg>
+  );
+};
+
+export const ArrowLeft = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      data-prefix="fas"
+      data-icon="arrow-left"
+      className="prefix__svg-inline--fa prefix__fa-arrow-left prefix__fa-w-14"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+      {...props}
+    >
+      <path
+        fill={props.fill}
+        d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+      />
+    </svg>
+  );
+};
