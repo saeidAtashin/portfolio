@@ -8,7 +8,7 @@ export const Work = [
 
     demo: "https://vam30.com",
     github: "",
-    img: "https://vam30.com/logo.png",
+    img: "https://assets.myket.ir/icons/large/884b68ec-6002-478d-9958-a1a5910e38a5.png",
   },
   {
     id: 1,
