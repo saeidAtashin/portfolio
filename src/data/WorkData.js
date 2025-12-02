@@ -40,7 +40,7 @@ export const Work = [
 
     demo: "https://candy-crush-delta.vercel.app/",
     github: "https://github.com/saeidAtashin/candyCrush",
-    img: "https://www.cityam.com/wp-content/uploads/2023/09/CCS-Candies-Key-Art-4-3-Logo-e1695898049123.jpg?resize=742,557",
+    img: "https://m.media-amazon.com/images/I/81I2fdZn92L.png",
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ export const Work = [
 
     demo: "https://threejsairplane.vercel.app/",
     github: "https://github.com/saeidAtashin/threejsairplane",
-    img: "https://images.stockcake.com/public/f/b/6/fb6acf1b-fcaa-4152-b48b-6b0e2b0c5374_large/airplane-mid-flight-stockcake.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyBCPsz2J247yVikNhonpzWe2QP85JkHIu6Q&s",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const Work = [
 
     demo: "https://3d-tetris-gamma.vercel.app/",
     github: "https://github.com/saeidAtashin/3d-tetris",
-    img: "https://scienceline.org/wp-content/uploads/2020/01/tetris-1536x1024.jpg",
+    img: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/41/e0/11/41e011ce-6413-631a-b4fa-0cf9274a390d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png",
   },
   {
     id: 4,
@@ -74,6 +74,6 @@ export const Work = [
     demo: "https://3d-hard-snake.vercel.app/",
     github:
       "https://github.com/saeidAtashin/3d-hard-snake/tree/master/3d-snake-hard",
-    img: "https://images.ctfassets.net/wcfotm6rrl7u/6LMSGFiFadFWFf1gcQajFb/2a284d47092d116a5d1253c79bef5af1/snake-day-FEATURED-desktop.png?w=1593&h=896&fm=avif&q=88",
+    img: "https://handsontek.net/images/Teams/Snake/hero.png",
   },
 ];
