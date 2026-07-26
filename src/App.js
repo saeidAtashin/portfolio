@@ -10,6 +10,7 @@ import AboutPage from "./components/AboutPage";
 import BlogPage from "./components/BlogPage";
 import Work from "./components/WorkPage";
 import MySkillsPage from "./components/MySkillsPage";
+import GameHubPage from "./components/GameHubPage";
 import { AnimatePresence, motion } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar";
 
@@ -131,6 +132,21 @@ function App() {
                   style={{ width: "100%", minHeight: "100vh" }}
                 >
                   <MySkillsPage />
+                </motion.div>
+              }
+            />
+            <Route
+              exact
+              path="/game-hub"
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  style={{ width: "100%", minHeight: "100vh" }}
+                >
+                  <GameHubPage />
                 </motion.div>
               }
             />

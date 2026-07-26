@@ -27,7 +27,6 @@ const Box = styled(motion.li)`
 
   @media (max-width: 500px) {
     width: 11rem;
-
   }
 
   &::after {
@@ -71,6 +70,7 @@ const Tags = styled.div`
   border-top: 2px solid ${(props) => props.theme.body};
   padding-top: 0.5rem;
   display: flex;
+  flex-wrap: wrap;
   ${Box}:hover & {
     border-top: 2px solid ${(props) => props.theme.text};
   }
@@ -83,20 +83,50 @@ const Tag = styled.span`
 const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 `;
 
 const Link2 = styled.a`
   background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
   text-decoration: none;
-  padding: 0.5rem calc(2rem + 2vw);
+  padding: 0.5rem calc(1.2rem + 1vw);
   border-radius: 0 0 0 50px;
-  font-size: calc(1em + 0.5vw);
+  font-size: calc(0.85em + 0.4vw);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 
   ${Box}:hover & {
     background-color: ${(props) => props.theme.text};
     color: ${(props) => props.theme.body};
   }
+`;
+
+const PlayButton = styled.button`
+  background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
+  text-decoration: none;
+  padding: 0.5rem calc(1.2rem + 1vw);
+  border-radius: 0 0 0 50px;
+  font-size: calc(0.85em + 0.4vw);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  ${Box}:hover & {
+    background-color: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.body};
+  }
+`;
+
+const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 `;
 
 const Git = styled.a`
@@ -145,26 +175,40 @@ const Img = styled.img`
 
 const Card = (props) => {
   const { id, name, description, tags, demo, github, img } = props.data;
+  const isGameHub = props.variant === "gameHub";
 
   return (
     <Box key={id} variants={Item}>
       <Title>
         {name}
-        <Img src={img} />
+        <Img src={img} alt="" />
       </Title>
       <Description>{description}</Description>
       <Tags>
-        {tags.map((t, id) => {
-          return <Tag key={id}>#{t}</Tag>;
+        {tags.map((t, tagId) => {
+          return <Tag key={tagId}>#{t}</Tag>;
         })}
       </Tags>
       <Footer>
-        <Link2 href={demo} target="_blank">
-          Visit
-        </Link2>
-        <Git href={github} target="_blank">
-          <Github width={30} height={30} />
-        </Git>
+        {isGameHub ? (
+          <Actions>
+            <PlayButton type="button" onClick={() => props.onPlay?.(props.data)}>
+              Play
+            </PlayButton>
+            <Link2 href={demo} target="_blank" rel="noreferrer">
+              Open site
+            </Link2>
+          </Actions>
+        ) : (
+          <Link2 href={demo} target="_blank" rel="noreferrer">
+            Visit
+          </Link2>
+        )}
+        {github ? (
+          <Git href={github} target="_blank" rel="noreferrer">
+            <Github width={30} height={30} />
+          </Git>
+        ) : null}
       </Footer>
     </Box>
   );

@@ -146,6 +146,25 @@ const SKILLS = styled(NavLink)`
   }
 `;
 
+const GAMEHUB = styled(NavLink)`
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  transition: color 0.9s ease;
+
+  z-index: 1;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
+`;
+
 const rotates = keyframes`
 from{
   transform: rotate(0);
@@ -620,6 +639,22 @@ const Main = () => {
               About Me
             </motion.h2>
           </ABOUT>
+          <GAMEHUB click={click} to="/game-hub" rel="noreferrer">
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Game Hub
+            </motion.h2>
+          </GAMEHUB>
           <SKILLS to="/skills" rel="noreferrer">
             <motion.h2
               initial={{
