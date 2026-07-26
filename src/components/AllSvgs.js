@@ -119,6 +119,25 @@ export const YinYang = (props) => {
   );
 };
 
+export const Flash = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      data-prefix="fas"
+      data-icon="bolt"
+      className="prefix__svg-inline--fa prefix__fa-bolt prefix__fa-w-12"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+      {...props}
+    >
+      <path
+        fill={props.fill || "currentColor"}
+        d="M73 0c-6.6 0-12.4 4-14.7 10.1L.2 179.4C-2.8 189.2 4.6 200 15 200h103.5l-54.4 291.4c-3.7 19.8 22.5 32.2 35.3 16.3l224-320c9.6-13.7-.2-32.7-17-32.7H191.6l54.2-145.5C250.5 7.4 244 0 235.4 0H73z"
+      />
+    </svg>
+  );
+};
+
 export const Anchor = (props) => {
   return (
     <svg

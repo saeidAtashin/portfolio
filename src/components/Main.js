@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import LogoComponents from "../subComponents/LogoComponents";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
-import { YinYang, ArrowDown, ArrowRight, ArrowLeft } from "./AllSvgs";
+import { YinYang, ArrowDown, ArrowRight, ArrowLeft, Flash } from "./AllSvgs";
 import Intro from "./Intro";
 
 const MainContainer = styled.div`
@@ -215,7 +215,7 @@ const IconWrapper = styled.div`
 
   & > svg {
     animation: ${rotates} infinite linear;
-    animation-duration: ${(props) => props.animationDuration}s;
+    animation-duration: ${(props) => props.$animationDuration}s;
   }
 `;
 
@@ -315,7 +315,7 @@ const ArrowToWork = styled.div`
 const ArrowToAbout = styled.div`
   position: absolute;
   bottom: calc(2.5rem + 0.5vh);
-  left: 32%;
+  left: 16.5%;
   transform: translateX(-50%);
   z-index: 10;
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
@@ -332,7 +332,7 @@ const ArrowToAbout = styled.div`
 
   @media (max-width: 500px) {
     bottom: calc(5rem + 0.5vh);
-    left: 30.5%;
+    left: 15%;
     & > svg {
       width: 20px;
       height: 20px;
@@ -343,7 +343,7 @@ const ArrowToAbout = styled.div`
 const ArrowToSkills = styled.div`
   position: absolute;
   bottom: calc(2.5rem + 0.5vh);
-  right: 32.5%;
+  right: 16.5%;
   transform: translateX(50%);
   z-index: 10;
   color: ${(props) => props.theme.text};
@@ -359,7 +359,7 @@ const ArrowToSkills = styled.div`
 
   @media (max-width: 500px) {
     bottom: calc(5rem + 0.5vh);
-    right: 30%;
+    right: 15%;
     & > svg {
       width: 20px;
       height: 20px;
@@ -416,8 +416,9 @@ const Main = () => {
   const [nameHovered, setNameHovered] = useState(false);
   const [screenHovered, setScreenHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
-  const animationRef = useRef(null);
+  const centerRef = useRef(null);
   const rafRef = useRef(null);
+  const awaitingTravelEndRef = useRef(false);
 
   const easeInOutCubic = (t) => {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -443,23 +444,31 @@ const Main = () => {
   };
 
   const handleClick = () => {
-    const newClickState = !click;
-
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
     }
-    if (animationRef.current) {
-      clearTimeout(animationRef.current);
-    }
 
+    awaitingTravelEndRef.current = true;
     setAnimationDuration(0.3);
-
-    setClick(newClickState);
-
-    animationRef.current = setTimeout(() => {
-      smoothTransitionSpeed(0.3, 1.5, 800);
-    }, 2100);
+    setClick((prev) => !prev);
   };
+
+  useEffect(() => {
+    const centerEl = centerRef.current;
+    if (!centerEl) return undefined;
+
+    const onTravelEnd = (event) => {
+      if (event.target !== centerEl) return;
+      if (event.propertyName !== "left") return;
+      if (!awaitingTravelEndRef.current) return;
+
+      awaitingTravelEndRef.current = false;
+      smoothTransitionSpeed(0.3, 1.5, 800);
+    };
+
+    centerEl.addEventListener("transitionend", onTravelEnd);
+    return () => centerEl.removeEventListener("transitionend", onTravelEnd);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -514,9 +523,6 @@ const Main = () => {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
-      if (animationRef.current) {
-        clearTimeout(animationRef.current);
-      }
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
       }
@@ -551,8 +557,8 @@ const Main = () => {
         <LogoComponents theme={click ? "dark" : "light"} />
         <SocialIcons theme={click ? "dark" : "light"} />
 
-        <Center click={click} onClick={() => handleClick()}>
-          <IconWrapper animationDuration={animationDuration}>
+        <Center ref={centerRef} click={click} onClick={handleClick}>
+          <IconWrapper $animationDuration={animationDuration}>
             <YinYang
               width={click ? "120" : "200"}
               height={click ? "120" : "200"}
@@ -651,7 +657,13 @@ const Main = () => {
               }}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.35rem",
+              }}
             >
+              <Flash width={16} height={16} fill="currentColor" />
               Game Hub
             </motion.h2>
           </GAMEHUB>
