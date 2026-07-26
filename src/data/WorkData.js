@@ -11,6 +11,16 @@ export const Work = [
     img: "https://assets.myket.ir/icons/large/884b68ec-6002-478d-9958-a1a5910e38a5.png",
   },
   {
+    id: 9,
+    name: "VAM30 App (وامسی)",
+    description:
+      "React Native mobile app for the Persian installment/fintech platform VAM30 (وامسی). Available on Cafe Bazaar for Android users.",
+    tags: ["React Native", "Mobile", "Fintech"],
+    demo: "https://cafebazaar.ir/app/com.danapey.vam30",
+    github: "",
+    img: "/vam30.webp",
+  },
+  {
     id: 1,
     name: "Ecommerce Shop",
     description:
