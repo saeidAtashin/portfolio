@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Box = styled(motion.a)`
@@ -96,7 +95,7 @@ const Item = {
 };
 
 const BlogComponent = (props) => {
-  const { name, tags, date, imgSrc, link, id } = props.blog;
+  const { name, tags, date, imgSrc, link } = props.blog;
   return (
     <Container variants={Item}>
       <Box target="_blank" href={link}>

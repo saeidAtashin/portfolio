@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponents from "../subComponents/LogoComponents";
@@ -410,6 +410,10 @@ const IntroOverlay = styled(motion.div)`
   transition: mask-image 0.1s ease-out, -webkit-mask-image 0.1s ease-out;
 `;
 
+const easeInOutCubic = (t) => {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+};
+
 const Main = () => {
   const [click, setClick] = useState(false);
   const [animationDuration, setAnimationDuration] = useState(1.5);
@@ -420,11 +424,7 @@ const Main = () => {
   const rafRef = useRef(null);
   const awaitingTravelEndRef = useRef(false);
 
-  const easeInOutCubic = (t) => {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  };
-
-  const smoothTransitionSpeed = (startSpeed, endSpeed, duration) => {
+  const smoothTransitionSpeed = useCallback((startSpeed, endSpeed, duration) => {
     const startTime = performance.now();
 
     const animate = (currentTime) => {
@@ -441,7 +441,7 @@ const Main = () => {
     };
 
     rafRef.current = requestAnimationFrame(animate);
-  };
+  }, []);
 
   const handleClick = () => {
     if (rafRef.current) {
@@ -468,7 +468,7 @@ const Main = () => {
 
     centerEl.addEventListener("transitionend", onTravelEnd);
     return () => centerEl.removeEventListener("transitionend", onTravelEnd);
-  }, []);
+  }, [smoothTransitionSpeed]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {

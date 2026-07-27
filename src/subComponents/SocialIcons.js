@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Linkedin, Github, Instagram, Whatsapp } from "../components/AllSvgs";
 import { DarkTheme } from "../components/Themes";
@@ -43,7 +42,7 @@ const SocialIcons = (props) => {
         animate={{ scale: 1 }}
         transition={{ type: "spring", duration: 1, delay: 1 }}
       >
-        <a target="_blank" href="https://github.com/saeidAtashin">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/saeidAtashin">
           <Github
             width={30}
             height={30}
@@ -56,7 +55,7 @@ const SocialIcons = (props) => {
         animate={{ scale: 1 }}
         transition={{ type: "spring", duration: 1, delay: 1.2 }}
       >
-        <a target="_blank" href="https://www.instagram.com/saeidaatashin">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/saeidaatashin">
           <Instagram
             width={30}
             height={30}
@@ -71,6 +70,7 @@ const SocialIcons = (props) => {
       >
         <a
           target="_blank"
+          rel="noopener noreferrer"
           href="https://www.linkedin.com/in/saeid-kase-atashin-84ba52197/"
         >
           <Linkedin
@@ -87,6 +87,7 @@ const SocialIcons = (props) => {
       >
         <a
           target="_blank"
+          rel="noopener noreferrer"
           href="https://api.whatsapp.com/send?phone=9368165125"
         >
           <Whatsapp
